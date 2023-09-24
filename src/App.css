@@ -1,0 +1,140 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+:root {
+  font-size: 14px;
+}
+p,
+strong,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-flow: column;
+  background-color: white;
+  color: black;
+  padding: 7%;
+  aspect-ratio: 210 / 297;
+  gap: 3em;
+}
+.panel {
+  padding: 2em;
+}
+* ~ section {
+  margin-top: 4em;
+}
+img.profile {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.button-heading {
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  padding-block: 0.25em;
+}
+.list {
+  text-align: left;
+  font-size: 1rem;
+}
+.list:not(.skills-list) {
+  list-style: none;
+}
+section:not(.reference) li + li{
+  /* Reference is ordered in a row */
+  padding-top: 1.2em;
+}
+/* Contact List*/
+.contact-list li:nth-child(1)::before {
+  content: "📞 ";
+}
+.contact-list li:nth-child(2)::before {
+  content: "📥 ";
+}
+.contact-list li:nth-child(3)::before {
+  content: "@ ";
+}
+.contact-list li:nth-child(4)::before {
+  content: "🏠 ";
+}
+
+/* Education List */
+.education-item > * {
+  padding: 0;
+  margin: 0;
+}
+.education-item h2 {
+  font-size: 1.3rem;
+}
+.education-item h3 {
+  font-size: 1.1rem;
+}
+
+/* Main title*/
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 20%;
+}
+.main-title {
+  font-size: 2rem;
+}
+.main-title strong {
+  margin-block: -0.25em;
+  font-size: 3em;
+}
+.main-title strong:nth-child(1) {
+  font-weight: 800;
+}
+.main-title strong:nth-child(2) {
+  font-weight: 500;
+}
+.main-title p {
+  font-weight: 300;
+}
+
+/* Content title*/
+.main-panel .heading {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  font-weight: 800;
+}
+.main-panel .heading hr {
+  width: 100%;
+  height: fit-content;
+  border: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Reference */
+.reference-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 2em;
+}
+.reference-list h2, .reference-list p{
+  font-size: 1.2rem;
+  padding: 0;
+}
+.reference-list h2{
+  padding-bottom: .2em;
+}
+.reference-contact{
+  padding-top: 1em;
+}
+.reference-contact-item{
+  display: flex;
+  gap: 2em;
+}
