@@ -1,0 +1,76 @@
+{
+  "url": "https://i5x64bit.github.io/portfolio/assets/images/profile.png",
+  "information": {
+    "firstName": "Tomer",
+    "lastName": "Vainshtein",
+    "title": "Fullstack Developer"
+  },
+  "contact": {
+    "phone": "+972543006357",
+    "email": "vaintomer@gmail.com",
+    "website": "https://www.linkedin.com/in/tomer-vainshtein-8a134b174/",
+    "address": "Beer Sheva, South District"
+  },
+  "education": [
+    {
+      "id": 0,
+      "emphasis": "Fullstack Programming",
+      "location": "The Odin Project",
+      "from": "2023",
+      "to": "Present"
+    },
+    {
+      "id": 1,
+      "emphasis": "Software Engineering",
+      "location": "Rager High School",
+      "from": "2015",
+      "to": "2021"
+    }
+  ],
+  "skills": [
+    "UI/UX",
+    "Visual Design",
+    "Wireframes",
+    "React",
+    "Vanilla JavaScript",
+    "Webpack+Babel",
+    "TDD",
+    "Linux/Bash"
+  ],
+  "experience": [
+    {
+      "position": "Freelance Fullstack",
+      "company": "At Home",
+      "location": "Beer-Sheva, Israel",
+      "from": "2023",
+      "to": "Present",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolor numquam accusantium porro quod, dignissimos a veniam, perferendis aspernatur voluptatem iure, magnam dicta earum velit tenetur dolore. Perferendis, quasi assumenda."
+    },
+    {
+      "position": "Retail Salesworker and PC Technician",
+      "company": "Electronics Store",
+      "location": "Beer-Sheva, Israel",
+      "from": "2019",
+      "to": "2021",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolor numquam accusantium porro quod, dignissimos a veniam, perferendis aspernatur voluptatem iure, magnam dicta earum velit tenetur dolore. Perferendis, quasi assumenda."
+    },
+    {
+      "position": "PC Technician",
+      "company": "FixIt - Computers Lab",
+      "location": "Beer-Sheva, Israel",
+      "from": "2019",
+      "to": "2017",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolor numquam accusantium porro quod, dignissimos a veniam, perferendis aspernatur voluptatem iure, magnam dicta earum velit tenetur dolore. Perferendis, quasi assumenda."
+    }
+  ],
+  "reference": [
+    {
+      "fullName": "John Doe",
+      "location": "Google",
+      "title": "Sales Manager",
+      "contact": {
+        "email": "some@email.com"
+      }
+    }
+  ]
+}

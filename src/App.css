@@ -1,8 +1,14 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 5em;
+  align-content: center;
 }
 :root {
   font-size: 14px;
@@ -25,6 +31,9 @@ h3 {
   padding: 7%;
   aspect-ratio: 210 / 297;
   gap: 3em;
+  font-size: 0.6rem;
+  grid-row: span 2;
+  max-height: 80svh;
 }
 .panel {
   padding: 2em;
@@ -44,12 +53,12 @@ img.profile {
 }
 .list {
   text-align: left;
-  font-size: 1rem;
+  font-size: 1em;
 }
 .list:not(.skills-list) {
   list-style: none;
 }
-section:not(.reference) li + li{
+section:not(.reference) li + li {
   /* Reference is ordered in a row */
   padding-top: 1.2em;
 }
@@ -73,10 +82,10 @@ section:not(.reference) li + li{
   margin: 0;
 }
 .education-item h2 {
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 .education-item h3 {
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 
 /* Main title*/
@@ -88,7 +97,7 @@ section:not(.reference) li + li{
   min-height: 20%;
 }
 .main-title {
-  font-size: 2rem;
+  font-size: 1.5em;
 }
 .main-title strong {
   margin-block: -0.25em;
@@ -124,17 +133,48 @@ section:not(.reference) li + li{
   grid-auto-columns: 1fr;
   gap: 2em;
 }
-.reference-list h2, .reference-list p{
-  font-size: 1.2rem;
+.reference-list h2,
+.reference-list p {
+  font-size: 1.2em;
   padding: 0;
 }
-.reference-list h2{
-  padding-bottom: .2em;
+.reference-list h2 {
+  padding-bottom: 0.2em;
 }
-.reference-contact{
+.reference-contact {
   padding-top: 1em;
 }
-.reference-contact-item{
+.reference-contact-item {
   display: flex;
   gap: 2em;
+}
+
+/* Form */
+form {
+  max-width: 350px;
+}
+legend {
+  padding-bottom: 1em;
+  font-size: 1.5em;
+}
+label {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media print {
+  .controls, .forms {
+    display: none;
+  }
+  .page {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+  :root,
+  #root {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
 }
