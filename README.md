@@ -9,12 +9,12 @@ person
     firstName
     lastName
     ?title
-  contact
+  ?contact
     phone
     email
     website
     address
-  education
+  ?education
     item
       emphasis
       location
