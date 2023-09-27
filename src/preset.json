@@ -28,17 +28,18 @@
     }
   ],
   "skills": [
-    "UI/UX",
-    "Visual Design",
-    "Wireframes",
-    "React",
-    "Vanilla JavaScript",
-    "Webpack+Babel",
-    "TDD",
-    "Linux/Bash"
+    { "id": 0, "value": "UI/UX" },
+    { "id": 1, "value": "Visual Design" },
+    { "id": 2, "value": "Wireframes" },
+    { "id": 3, "value": "React" },
+    { "id": 4, "value": "Vanilla JavaScript" },
+    { "id": 5, "value": "Webpack+Babel" },
+    { "id": 6, "value": "TDD" },
+    { "id": 7, "value": "Linux/Bash" }
   ],
   "experience": [
     {
+      "id": 0,
       "position": "Freelance Fullstack",
       "company": "At Home",
       "location": "Beer-Sheva, Israel",
@@ -47,6 +48,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolor numquam accusantium porro quod, dignissimos a veniam, perferendis aspernatur voluptatem iure, magnam dicta earum velit tenetur dolore. Perferendis, quasi assumenda."
     },
     {
+      "id": 1,
       "position": "Retail Salesworker and PC Technician",
       "company": "Electronics Store",
       "location": "Beer-Sheva, Israel",
@@ -55,6 +57,7 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur dolor numquam accusantium porro quod, dignissimos a veniam, perferendis aspernatur voluptatem iure, magnam dicta earum velit tenetur dolore. Perferendis, quasi assumenda."
     },
     {
+      "id": 2,
       "position": "PC Technician",
       "company": "FixIt - Computers Lab",
       "location": "Beer-Sheva, Israel",
@@ -65,6 +68,7 @@
   ],
   "reference": [
     {
+      "id": 1,
       "fullName": "John Doe",
       "location": "Google",
       "title": "Sales Manager",

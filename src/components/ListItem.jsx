@@ -38,8 +38,8 @@ export default function ListItem({ type, content }) {
       </p>,
       <div className="reference-contact">{...contactItems}</div>,
     ];
-  } else {
-    liContent = [content];
+  } else if(type==="skills") {
+    liContent = content.value;
   }
   return <li className={type + "-item"}>{...liContent}</li>;
 }
