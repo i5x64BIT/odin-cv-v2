@@ -61,7 +61,8 @@ function App() {
           setPerson={setPerson}
           title="References"
           propName={"reference"}
-          fields={["fullName", 'location', 'title', 'contact']}
+          fields={["fullName", "location", "title"]}
+          objectFields={["contact"]}
         />
       </div>
       <Page person={person} />

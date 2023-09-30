@@ -34,6 +34,7 @@ h3 {
   font-size: 0.6rem;
   grid-row: span 2;
   max-height: 80svh;
+  min-height: 975px;
 }
 .panel {
   padding: 2em;
@@ -153,6 +154,7 @@ section:not(.reference) li + li {
 .forms{
   display: flex;
   flex-direction: column;
+  min-width: 365px;
 }
 .controls{
   text-align: left;
@@ -161,6 +163,25 @@ section:not(.reference) li + li {
   background-color: #0a325b;
 }
 /* Form */
+.section-collapse{
+  z-index: 1;
+}
+.section-form{
+  transform-origin: top;
+  background-color: #161616;
+  animation: slide-in 250ms ease;
+  padding: 2em;
+}
+@keyframes slide-in {
+  0%{
+    transform: rotateX(-90deg);
+    opacity: 0;
+  }
+  100%{
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
 form div{
   position: relative;
 }
@@ -172,22 +193,28 @@ form:has(div){
   flex-direction: column;
   gap: 1.5em;
 }
-form button:nth-of-type(1){
-  margin-right: auto;
+form button.danger{
   background-color: #c65447;
 }
-
-form div button{
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(100%, -50%);
+.form-item{
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+.btn-remove-entry{
+  min-width: 25px;
   aspect-ratio: 1/1;
-  width: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: .8rem;
+}
+form .section-controls{
+  display: flex;
+}
+.section-controls button{
+  width: 50%;
+  flex-grow: 1;
 }
 legend {
   padding-bottom: 1em;

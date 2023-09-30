@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 /* eslint-disable react/prop-types */
 export default function InputForm({
   person,
@@ -5,9 +7,9 @@ export default function InputForm({
   title,
   propName,
   fields,
+  objectFields,
 }) {
   // fields is an array of field names
-
   const clickHandler = (e) => {
     e.preventDefault();
     setPerson({
@@ -20,12 +22,20 @@ export default function InputForm({
           ...fields.reduce((obj, f) => {
             return { ...obj, [f]: "" };
           }, {}),
+          ...objectFields?.reduce((obj, f) => {
+            return { ...obj, [f]: {} };
+          }, {}),
         },
       ],
     });
   };
 
+  const [isCollapsed, setCollapsed] = useState(true);
+
   if (person[propName]) {
+    if (isCollapsed) {
+      return <button onClick={() => setCollapsed(false)}>{title}</button>;
+    }
     let inputBlocks;
     if (person[propName] instanceof Array) {
       const changeHandler = (e) => {
@@ -45,46 +55,77 @@ export default function InputForm({
       const removeHandler = (e) => {
         e.preventDefault();
         const id = e.target.dataset.id;
-        setPerson({...person, [propName]: person[propName].filter(i => i.id != id)});
-      }
+        setPerson({
+          ...person,
+          [propName]: person[propName].filter((i) => i.id != id),
+        });
+      };
 
       inputBlocks = person[propName].map((block) => {
-        const items = Object.keys(block)
-          .filter((key) => fields.includes(key))
-          .map((key) => (
-            <label key={block.id + "_" + key}>
-              {key}
-              <input
-                key={block.id + "_" + key + "_input"}
-                data-id={block.id + "_" + key + "_input"}
-                type="text"
-                value={block[key]}
-                onChange={changeHandler}
-              />
-            </label>
-          ));
-        return <div key={block.id + "_block"}>
-          {items}
-          <button data-id={block.id} onClick={removeHandler}>X</button>
-        </div>;
+        const items = Object.keys(block).map((key) => {
+          if (fields.includes(key)) {
+            return (
+              <label key={block.id + "_" + key}>
+                {key}
+                <input
+                  key={block.id + "_" + key + "_input"}
+                  data-id={block.id + "_" + key + "_input"}
+                  type="text"
+                  value={block[key]}
+                  onChange={changeHandler}
+                />
+              </label>
+            );
+          }
+        });
+        return (
+          <div
+            key={block.id + "_block"}
+            className={`form-item ${propName}-item`}
+          >
+            <div className="form-inputs">{items}</div>
+            <button
+              data-id={block.id}
+              onClick={removeHandler}
+              className="danger btn-remove-entry"
+            >
+              X
+            </button>
+          </div>
+        );
       });
     } else {
-      // Type object
-      inputBlocks = Object.keys(person[propName])
-        .filter((key) => fields.includes(key))
-        .map((key) => <h1 key={key + "-title"}>{key}</h1>);
+      //Nested objects, currently do nothing
     }
     return (
-      <form className="input-field">
-        <legend>{title}</legend>
-        <button onClick={() => {setPerson({...person, [propName]:undefined})}}>Remove {title}</button>
-        {inputBlocks}
-        <button onClick={clickHandler}>Add Entry</button>
-      </form>
+      <>
+        <button className="section-collapse" onClick={() => setCollapsed(true)}>{title}</button>
+        <div className="section-form">
+          <form className="input-field">
+            {inputBlocks}
+            <div className="section-controls">
+              <button
+                onClick={() => {
+                  setPerson({ ...person, [propName]: undefined });
+                }}
+                className="danger"
+              >
+                Remove {title}
+              </button>
+              <button onClick={clickHandler}>Add Entry</button>
+            </div>
+          </form>
+        </div>
+      </>
     );
   } else {
     return (
-      <button onClick={() => setPerson({ ...person, [propName]: [] })}>
+      <button
+        onClick={() => {
+          setPerson({ ...person, [propName]: [] });
+          setCollapsed(false);
+        }}
+      >
         Add {title}
       </button>
     );
