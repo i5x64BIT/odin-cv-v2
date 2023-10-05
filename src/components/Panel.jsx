@@ -26,5 +26,7 @@ export default function Panel({ type, content }) {
       <Section key="reference-section" content={content} type={"reference"} />,
     ];
   }
-  return <div className={`panel ${type}-panel`}>{...panelContent}</div>;
+  return <div className={`panel ${type}-panel`}>
+    {panelContent}
+    </div>;
 }

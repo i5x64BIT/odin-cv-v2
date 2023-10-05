@@ -13,6 +13,10 @@
 :root {
   font-size: 14px;
 }
+body{
+  margin: 0;
+  padding: 0;
+}
 p,
 strong,
 h1,
@@ -35,9 +39,6 @@ h3 {
   grid-row: span 2;
   max-height: 80svh;
   min-height: 975px;
-}
-.panel {
-  padding: 2em;
 }
 * ~ section {
   margin-top: 4em;
@@ -223,6 +224,68 @@ legend {
 label {
   display: flex;
   justify-content: space-between;
+}
+
+/* Mobile View*/
+@media screen and (max-width: 450px) {
+  #root{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+  }
+  .forms{
+    top: 0;
+    left:0;
+    position: absolute;
+    background-color: #161616;
+    max-width: 100vw;
+    min-width: 100vw;
+    transition: transform 1s ease-in-out;
+  }
+  .forms{
+    padding: 1em;
+  }
+  .forms{
+    align-items: center;
+  }
+  .forms > button{
+    min-width: 100%;
+    flex: 1;
+  }
+  .btn-burger{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    max-width: 10vw;
+    padding: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+  }
+  .btn-burger img{
+    width: 100%;
+  }
+  .page{
+    padding:5em 2em;
+    gap: 5em;
+    font-size: .3rem;
+    min-height: 0;
+    min-width: 0;
+    max-width: 75%;
+  }
+  .page > *{
+    justify-content: center;
+  }
+  .page .main-title{
+    min-height: 13em;
+  }
+  .page ul{
+    padding-left: 3em;
+  }
 }
 
 @media print {
